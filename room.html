@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+<div id="header" class="layui-row">
+    <div class="layui-col-lg12  layui-col-md12 layui-col-sm12 layui-col-xs12">
+        <i class="layui-icon layui-icon-username k-icon-user"></i>
+        <span id="username"></span>
+    </div>
+</div>
+<div class="layui-row" id="k-chat-body">
+    <div class="layui-col-lg2 layui-col-lg-offset2 k-chat-s" id="k-chat-list"><span id="k-list-head">在线列表</span></div>
+    <div class="layui-col-lg6 k-chat-s" id="k-edit">
+        <div id="k-chat-content"></div>
+        <textarea id="edit" style="display: none;"></textarea>
+        <div id="k-send">
+            <button class="layui-btn layui-btn-radius" id="k-send-btn">发送</button>
+        </div>
+    </div>
+    <button type="button" id="fk" style="display: none"></button>
+</div>
+<script src="/layui/layui.all.js"></script>
+<script src="https://cdn.bootcss.com/socket.io/2.1.1/socket.io.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/javascripts/chat.js"></script>
+<script>
+    var username = sessionStorage.getItem("username");
+    $("#username").text(username);
+
+    //禁止页面内按F5键进行刷新
+    function f_DisableF5Refresh(event) {
+        var e = event || window.event;
+        var keyCode = e.keyCode || e.which;
+        if (keyCode == 116) {
+            if (e.preventDefault) { //非IE
+                e.preventDefault();
+            } else { //IE
+                e.keyCode = 0;
+                e.returnValue = false;
+            }
+        }
+    }
+
+    if (document.addEventListener) {
+        document.addEventListener('keydown', f_DisableF5Refresh, false);
+    } else {
+        document.attachEvent('onkeydown', f_DisableF5Refresh);
+    }
+    var layedit = layui.layedit;
+    var index = layedit.build('edit', {
+        height: 120, //设置编辑器高度
+        tool: [
+            , 'face' //表情
+        ]
+    }); //建立编辑器
+
+
+</script>
+</body>
+</html>

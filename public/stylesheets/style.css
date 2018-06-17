@@ -1,0 +1,152 @@
+body {
+  background-color: #e2e2e2;
+}
+
+#k-chat-body {
+  margin-top: 30px;
+}
+
+#k-chat-list {
+  border: #7caf29 2px solid;
+  height: 620px;
+}
+
+#k-chat-content {
+  border: #7caf2a 1px solid;
+  height: 400px;
+  overflow: auto;
+}
+
+#k-edit {
+  border-top: #7caf29 2px solid;
+  border-right: #7caf29 2px solid;
+  border-bottom: #7caf29 2px solid;
+}
+
+.k-chat-s {
+  background-color: white;
+}
+
+.k-icon-user {
+  font-size: 30px;
+  font-weight: bolder;
+  display: inline-block;
+  margin-left: 70px;
+  margin-top: 25px;
+}
+
+#username {
+  display: inline-block;
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+#k-list-head {
+  font-size: 25px;
+  height: 70px;
+  margin-left: 75px;
+  margin-bottom: 10px;
+}
+
+.k-username-item {
+  background-color: #d4ff8b;
+  height: 50px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+}
+
+#k-send {
+  height: 48px;
+}
+
+#k-send-btn {
+  height: 40px;
+  width: 80px;
+  float: right;
+  margin-right: 20px;
+}
+.bubbleItem{
+  width: 100%;
+  display: inline-block;
+}
+.bubble{
+  max-width: 655px;
+  position: relative;
+  line-height: 30px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 7px;
+  margin-top: 15px;
+  padding-right: 10px;
+  display: inline-block;
+}
+.leftBubble{
+  position: relative;
+  margin-left: 25px;
+  border: 1px solid #00b6b6;
+  background-color: #f8fdfc;
+}
+.leftBubble .bottomLevel{
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  border-top: 10px solid #00b6b6;
+  border-left: 10px solid transparent;
+}
+.leftBubble .topLevel{
+  position: absolute;
+  top: 11px;
+  left: -8px;
+  border-top: 10px solid #f8fdfc;
+  border-left: 10px solid transparent;
+  z-index: 100;
+}
+.rightBubble{
+  position: relative;
+  margin-right: 25px;
+  float: right;
+  border: 1px solid #aaa;
+}
+.rightBubble .bottomLevel{
+  position: absolute;
+  bottom: 11px;
+  right: -10px;
+  border-bottom: 10px solid #aaa;
+  border-right: 10px solid transparent;
+}
+.rightBubble .topLevel{
+  position: absolute;
+  bottom: 12px;
+  right: -8px;
+  border-bottom: 10px solid #fff;
+  border-right: 10px solid transparent;
+  z-index: 100;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.k-name-right{
+  border: #00F7DE 1px solid;
+  padding:5px;
+  float:right;
+}
+.k-name-left{
+  border: #00F7DE 1px solid;
+  padding:5px;
+  float:left;
+}
+.k-avatar{
+    width: 40px;
+    height: 40px;
+    float:left;
+    border-radius: 50%;
+    border: 3px solid #eee;
+    overflow: hidden;
+}

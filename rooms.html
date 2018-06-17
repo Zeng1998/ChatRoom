@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <style>
+        .k-icon-user{
+            font-size: 30px;
+            font-weight: bolder;
+            display: inline-block;
+            margin-left:70px;
+            margin-top:25px;
+        }
+        #username{
+            display: inline-block;
+            font-size:30px;
+            margin-left:15px;
+        }
+        #header{
+            background: linear-gradient(#ffb9f5,white);
+        }
+        .k-btn-chat{
+            width:450px;
+            height:125px;
+            margin-top:125px;
+            margin-left:120px;
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+<div id="header" class="layui-row">
+    <div class="layui-col-lg12  layui-col-md12 layui-col-sm12 layui-col-xs12">
+        <i class="layui-icon layui-icon-username k-icon-user"></i>
+        <span id="username"></span>
+    </div>
+</div>
+<div class="layui-row">
+    <div class="layui-col-lg6 layui-col-md6 layui-col-sm12 layui-col-xs12">
+        <button class="layui-btn layui-btn-lg layui-btn-normal k-btn-chat " onclick="create()">创建群聊</button>
+    </div>
+    <div class="layui-col-lg6 layui-col-md6 layui-col-sm12 layui-col-xs12">
+        <button class="layui-btn layui-btn-lg layui-btn-primary k-btn-chat" onclick="join()">加入群聊</button>
+    </div>
+</div>
+<script src="/layui/layui.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    var username=sessionStorage.getItem("username");
+    $("#username").text(username);
+    layui.use(['layer','form'],function(){
+        var layer=layui.layer,
+            form=layui.form;
+    })
+    function create() {
+        var n="";
+        for(var i=0;i<6;i++)
+        {
+            n+=Math.floor(Math.random()*10);
+        }
+        layer.open({
+            title: '请记住群聊房间暗号'
+            ,content: '<div>'+n+'</div>'
+            ,btn: ['确认']
+            ,yes: function(index, layero){
+                window.location.href='/room?'+n;
+            }
+        });
+    }
+    function join() {
+        layer.open({
+            title: '请输入群聊房间暗号'
+            ,content: '<input class="layui-input" id="roomid" placeholder="暗号">'
+            ,btn: ['确认']
+            ,yes: function(index, layero){
+                var roomid=$("#roomid").val();
+                window.location.href='/room?'+roomid;
+            }
+        });
+    }
+</script>
+</body>
+</html>
