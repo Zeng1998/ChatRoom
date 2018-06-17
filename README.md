@@ -2,10 +2,10 @@
 a simple chat room base on nodejs
 
 # 本地运行步骤
-1. git clone git@github.com:Zeng1998/ChatRoom.git
-2. cd ChatRoom
-3. npm install
-4. node app.js
+1. `git clone git@github.com:Zeng1998/ChatRoom.git`
+2. `cd ChatRoom`
+3. `npm install`
+4. `node app.js`
 
 ## 然后就是一些奇奇怪怪的图片...
 
